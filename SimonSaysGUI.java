@@ -14,8 +14,12 @@ public class SimonSaysGUI implements ActionListener {
         int score = 0;
         JLabel userScore = new JLabel("Score:" + score);
         JPanel root = new JPanel();
-        GridLayout layout = new GridLayout(2, 2);
+        GridLayout layout = new GridLayout(0, 4);
         root.setLayout(layout);
+
+        JPanel panel = new JPanel();
+        BoxLayout bLayout = new BoxLayout(panel, BoxLayout.Y_AXIS);
+        panel.setLayout(bLayout);
 
         ArrayList<Color> userInput = new ArrayList<>();
 
@@ -58,16 +62,19 @@ public class SimonSaysGUI implements ActionListener {
 
         });
 
+        panel.add(userScore);
+
         root.add(red);
         root.add(blue);
         root.add(green);
-        root.add(yellow);
-        root.add(userScore);
+        root.add(yellow);  
 
-        frame.getContentPane().add(root);
+        panel.add(root);
+
+        frame.getContentPane().add(panel);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(750, 750);
+        frame.setSize(1000, 500);
         frame.setVisible(true);
 
         ArrayList<Color> colors = new ArrayList<>();
@@ -100,6 +107,7 @@ public class SimonSaysGUI implements ActionListener {
             }
             if (userInput.equals(colors)) {
                 score ++;
+                colors.clear();
                 numColors += 2;
                 userScore.setText("Score: " + score);
                 continue;
