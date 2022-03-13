@@ -14,7 +14,8 @@ public class Instructions {
         BoxLayout layout = new BoxLayout(panel, BoxLayout.Y_AXIS);
         // labels that contain the instructions
         JLabel instructions = new JLabel("Pay close attention to the highlighted color pattern. Once the pattern is over, replicate the exact order.");
-        JLabel instructionsCont = new JLabel("If you get the question wrong the game will end, if you get it correct you will move on. Good luck!");
+        JLabel instructions2 = new JLabel("If you get the question wrong the game will end, if you get it correct you will move on to another level.");
+        JLabel instructions3 = new JLabel("The first level contains 3 colors, good luck!");
         // button that agrees to terms
         JButton button = new JButton("Ok");
         // action listener that sets the agreement variable to true, and disposes the instructions frame
@@ -29,7 +30,8 @@ public class Instructions {
         // setting everything to the panel
         panel.setLayout(layout);
         panel.add(instructions);
-        panel.add(instructionsCont);
+        panel.add(instructions2);
+        panel.add(instructions3);
         panel.add(button);
 
         // initializing the frame

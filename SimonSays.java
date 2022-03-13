@@ -27,7 +27,7 @@ public class SimonSays {
         // creating button panel, and label panel as well as initializing main frame
         ButtonPanel root = new ButtonPanel(colors, userInput);
         LabelPanel panel = new LabelPanel(score, root);
-        new Frame(panel);
+        Frame frame = new Frame(panel);
         
         // ArrayList to store the random sequence of colors
         ArrayList<Color> randColors = new ArrayList<>();
@@ -87,9 +87,10 @@ public class SimonSays {
                     Thread.sleep(2000);
                 }
             }
-            // closing the game if the user got the sequence wrong
+            // displaying GameOver GUI and disposing the current GUI
             else {
-                System.exit(0);;
+                new GameOver();
+                frame.dispose();
             }
         }
         
